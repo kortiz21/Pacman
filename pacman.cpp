@@ -23,43 +23,43 @@ void Pacman::update(std::vector<std::string> &map) {
     // direction is 0 for right, 1 for up, 2 for left, 3 for down
     if (1 == sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
     {
-        if (map[pos.y/TILE_SIZE+PACMAN_SPEED][pos.x/TILE_SIZE] != 'x') {
+        //if (map[pos.y/TILE_SIZE+PACMAN_SPEED][pos.x/TILE_SIZE] != 'x') {
             direction = 3;
-        }
+        //}
     }
     else if (1 == sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
     {
-        if (map[pos.y/TILE_SIZE][pos.x/TILE_SIZE-PACMAN_SPEED] != 'x') {
+        //if (map[pos.y/TILE_SIZE][pos.x/TILE_SIZE-PACMAN_SPEED] != 'x') {
             direction = 2;
-        }
+        //}
     }
     else if (1 == sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
     {
-        if(map[pos.y/TILE_SIZE][pos.x/TILE_SIZE+PACMAN_SPEED] != 'x') {
+        //if(map[pos.y/TILE_SIZE][pos.x/TILE_SIZE+PACMAN_SPEED] != 'x') {
             direction = 0;
-        }
+        //}
     }
     else if (1 == sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
-       if (map[pos.y/TILE_SIZE-PACMAN_SPEED][pos.x/TILE_SIZE] != 'x') {
+       //if (map[pos.y/TILE_SIZE-PACMAN_SPEED][pos.x/TILE_SIZE] != 'x') {
             direction = 1;
-        }
+        //}
     }
 
     // move pacman in the direction he is facing by PACMAN_SPEED
-    if (direction == 0 && map[pos.y/TILE_SIZE][pos.x/TILE_SIZE+PACMAN_SPEED] != 'x')
+    if (direction == 0)
     {
         pos.x += PACMAN_SPEED;
     }
-    else if (direction == 1 && map[pos.y/TILE_SIZE-PACMAN_SPEED][pos.x/TILE_SIZE] != 'x')
+    else if (direction == 1)
     {
         pos.y -= PACMAN_SPEED;
     }
-    else if (direction == 2 && map[pos.y/TILE_SIZE][pos.x/TILE_SIZE-PACMAN_SPEED] != 'x')
+    else if (direction == 2)
     {
         pos.x -= PACMAN_SPEED;
     }
-    else if (direction == 3 && map[pos.y/TILE_SIZE+PACMAN_SPEED][pos.x/TILE_SIZE] != 'x')
+    else if (direction == 3)
     {
         pos.y += PACMAN_SPEED;
     }
