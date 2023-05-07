@@ -17,6 +17,9 @@ public:
     void draw(sf::RenderWindow &window);
     void set_position(float x, float y);
     void update(std::vector<std::string> &map);
+    // TEST COLLISION
+    sf::Vector2f getPosition() { return pos; }
+    sf::Sprite getSprite() { return sprite; }
 };
 
 #endif

@@ -1,4 +1,4 @@
-#include "gameWorld.h"
+#include "Headers/gameWorld.h"
 
 // constructor for the game world
 GameWorld::GameWorld(std::vector<std::string> &map, Pacman &pacman)

@@ -20,6 +20,8 @@ public:
     GameTile(std::string,float,float,bool,bool);
     // set up the sprite
     bool setUpSprite(std::string);
+    // TEST COLLISION
+     sf::Sprite getSprite() { return sprite; }
 };
 
 #endif

@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
-#include "constants.h"
+#include "Headers/constants.h"
 #include "gameTile.cpp"
 #include "gameWorld.cpp"
 #include "pacman.cpp"
+//#include "collision.cpp"
 
 int main()
 {
@@ -52,6 +53,8 @@ int main()
 
     Pacman pacman = Pacman();
     GameWorld gameWorld = GameWorld(map, pacman);
+    // TEST COLLISION
+    //Collision collision = Collision(pacman, gameWorld);
 
     while (window.isOpen())
     {
@@ -64,11 +67,15 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+        // TEST COLLISION
+        // Check if pacman collides with a wall
+        //collision.checkCollisionWithWall(pacman, gameWorld);
+
         // Update pacman
         pacman.update(map);
         // Clear screen
         window.clear();
-        // Draw stuff
+        // Draw map tiles
         for (int i = 0; i < GRID_LENGTH; i++)
         {
             for (int j = 0; j < GRID_WIDTH; j++)

@@ -1,4 +1,4 @@
-#include "gameTile.h"
+#include "Headers/gameTile.h"
 
 // constructor for the game tile
 GameTile::GameTile(std::string textureName, float x, float y, bool passable, bool exit)
